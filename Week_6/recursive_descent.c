@@ -1,7 +1,6 @@
 /* ⁠Write a program to implement Recursive Decent Parser with backtracking(Brute force Method)
      S->cAd, A->ab| a
-     
-    */
+*/
 
 #include <stdio.h>
 #include <string.h>
@@ -14,8 +13,6 @@
  
 const char *cursor;
 char string[64];
- 
-
 
 int A()
 {
@@ -26,22 +23,16 @@ int A()
         {
             printf("%-16s A -> ab\n",cursor);
             cursor++;
-            
-
         }
         else
         {
             printf("%-16s A -> a\n",cursor);
-
         }
         
-       return SUCCESS;
-        
-
+       return SUCCESS;  
     }
     else
-        return FAILED;
-    
+        return FAILED; 
 }
 
 int S(){
@@ -54,7 +45,6 @@ int S(){
             if(*cursor == 'd')
             {
                 cursor++;
-                // printf("Reaching");
                 return SUCCESS;
             }
             else
@@ -74,7 +64,6 @@ int main() {
     puts("");
     puts("Input          Action");
     puts("--------------------------------");
- 
     // Call the starting non-terminal E
     if (S() && *cursor == '\0') { // If parsing is successful and the cursor has reached the end
         puts("--------------------------------");
